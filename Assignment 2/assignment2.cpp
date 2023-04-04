@@ -4,7 +4,10 @@
 #include <string>
 using namespace std;
 
-bool compare(pair<string, int>a, pair<string, int>b) {
+bool compare(pair<string, int>&a, pair<string, int>&b) {
+	if (a.second == b.second) {
+		return a.first < b.first;
+	}
 	return a.second > b.second;
 }
 
@@ -18,7 +21,7 @@ int main() {
 	people.push_back({ "Hal", 20 }); people.push_back({ "Susann", 31 }); people.push_back({ "Dwight", 19 }); people.push_back({ "Kassandra", 21 }); people.push_back({ "Lawrence", 25 });
 	people.push_back({ "Cindy", 22 }); people.push_back({ "Cory", 27 }); people.push_back({ "Mac", 19 }); people.push_back({ "Romana", 27 });
 	people.push_back({ "Doretha", 32 }); people.push_back({ "Danna", 20 }); people.push_back({ "Zara", 23 }); people.push_back({ "Rosalyn", 26 });
-	people.push_back({ "Risa", 24 }); people.push_back({ "Benny", 28 }); people.push_back({ "Juan", 33 }); people.push_back({ "Natalie", 25 }); 
+	people.push_back({ "Risa", 24 }); people.push_back({ "Benny", 28 }); people.push_back({ "Juan", 33 }); people.push_back({ "Natalie", 25 });
 
 	//numbers acending numerically
 	sort(numbers, numbers + N);
